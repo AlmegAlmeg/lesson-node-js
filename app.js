@@ -5,6 +5,8 @@ const logger = require('morgan');
 const mongoose = require('mongoose')
 
 //!routes
+const middlwareRouter = require('./middleware/authMiddleware')
+
 const userSystemRouter = require('./routes/userSystem')
 const bizSystemRouter = require('./routes/bizSystem')
 
@@ -21,6 +23,6 @@ app.use(cookieParser());
 
 //!routes usage
 app.use('/user', userSystemRouter)
-app.use('/biz', bizSystemRouter)
+app.use('/biz', middlwareRouter, bizSystemRouter)
 
 module.exports = app;

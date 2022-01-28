@@ -9,7 +9,14 @@ const createToken = data =>{
     })
 }
 
-const verifyToken
+const verifyToken = token =>{
+    return new Promise((res,rej)=>{
+        jwt.verify(token, "kajhSKJDF@(824A1!#@$HA", (err, decoded)=>{
+            if(err) rej(err)
+            else res(decoded)
+        })
+    })
+}
 
 module.exports = {
     createToken,

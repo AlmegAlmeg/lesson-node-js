@@ -3,6 +3,7 @@ const router = express.Router()
 const UserVaidation = require('../../validation/userValidation')
 const UsereModel = require('../../model/userModel')
 const bcrypt = require('../../config/bcrypt')
+const jwt = require('../../config/jwt')
 
 //! create a post request
 router.post('/', async (req,res)=>{
@@ -20,10 +21,9 @@ router.post('/', async (req,res)=>{
             if(isPassOk === true){
                 //this is good
                 //! create token to the user
-
-
+                const token = await jwt.createToken({ id: userArr[0].id, email: userArr[0].email})
                 //! write a response with the token
-                res.json({ status: 200, msg: `Email and pass are ok, welcome back ${userArr[0].userName}`})
+                res.json({ status: 200, msg: `Email and pass are ok, welcome back ${userArr[0].userName}`, token: token})
             }
             else{
                 throw 'Wrong password'
