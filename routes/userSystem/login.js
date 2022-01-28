@@ -21,7 +21,7 @@ router.post('/', async (req,res)=>{
             if(isPassOk === true){
                 //this is good
                 //! create token to the user
-                const token = await jwt.createToken({ id: userArr[0].id, email: userArr[0].email})
+                const token = await jwt.createToken({ id: userArr[0].id, email: userArr[0].email })
                 //! write a response with the token
                 res.json({ status: 200, msg: `Email and pass are ok, welcome back ${userArr[0].userName}`, token: token})
             }

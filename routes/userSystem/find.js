@@ -3,9 +3,9 @@ const router = express.Router()
 
 //! create get request
 router.get('/', async (req,res)=>{
-    //! get the data from the token
-    console.log(req.tokenData)
+    console.log("Nice, you passed the middleware")
 })
+//! get the data from the token
 //! display the data as a response
 
 module.exports = router

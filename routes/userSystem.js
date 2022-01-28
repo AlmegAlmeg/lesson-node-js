@@ -6,11 +6,11 @@ const middlwareRouter = require('../middleware/authMiddleware')
 
 const registerRouter = require('./userSystem/register')
 const loginRouter = require('./userSystem/login')
-const findRouter = require('./userSystem/find')
+const findUserRouter = require('./userSystem/find')
 
 //! routes usage
 router.use('/register', registerRouter)
 router.use('/login', loginRouter)
-router.use('/find', middlwareRouter, findRouter)
+router.use('/find', middlwareRouter, findUserRouter)
 
 module.exports = router
