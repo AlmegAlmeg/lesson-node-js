@@ -6,6 +6,7 @@ const mongoose = require('mongoose')
 
 //!routes
 const userSystemRouter = require('./routes/userSystem')
+const bizSystemRouter = require('./routes/bizSystem')
 
 mongoose.connect('mongodb://localhost/stars_builds')
     .then(()=> console.log({ msg: "Connected to db"}))
@@ -19,6 +20,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
 //!routes usage
-app.use('/users', userSystemRouter)
+app.use('/user', userSystemRouter)
+app.use('/biz', bizSystemRouter)
 
 module.exports = app;
