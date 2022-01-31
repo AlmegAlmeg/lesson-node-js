@@ -37,7 +37,12 @@ const findUserByEmail = email =>{
     return User.find({ email: email})
 }
 
+const findUserbyId = id =>{
+    return User.findById(id)
+}
+
 module.exports = {
     createUser,
-    findUserByEmail
+    findUserByEmail,
+    findUserbyId
 }

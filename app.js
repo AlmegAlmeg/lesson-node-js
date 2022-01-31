@@ -6,7 +6,6 @@ const mongoose = require('mongoose')
 
 //!routes
 const middlwareRouter = require('./middleware/authMiddleware')
-
 const userSystemRouter = require('./routes/userSystem')
 const bizSystemRouter = require('./routes/bizSystem')
 
