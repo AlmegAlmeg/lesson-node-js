@@ -28,6 +28,11 @@ const createArticle = (title, articleBody, createdBy, createdAt) =>{
     return newArcitle.save()
 }
 
+const findAtricleById = cardId =>{
+    return Article.findById(cardId)
+}
+
 module.exports = {
-    createArticle
+    createArticle,
+    findAtricleById
 }
