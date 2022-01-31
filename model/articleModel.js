@@ -32,7 +32,12 @@ const findAtricleById = cardId =>{
     return Article.findById(cardId)
 }
 
+const findAllArticlesByUserId = userId =>{
+    return Article.find({ createdBy: userId })
+}
+
 module.exports = {
     createArticle,
-    findAtricleById
+    findAtricleById,
+    findAllArticlesByUserId
 }
