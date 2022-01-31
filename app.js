@@ -7,7 +7,7 @@ const mongoose = require('mongoose')
 //!routes
 const middlwareRouter = require('./middleware/authMiddleware')
 const userSystemRouter = require('./routes/userSystem')
-const bizSystemRouter = require('./routes/bizSystem')
+const articleSystemRouter = require('./routes/articleSystem')
 
 mongoose.connect('mongodb://localhost/stars_builds')
     .then(()=> console.log({ msg: "Connected to db"}))
@@ -22,6 +22,6 @@ app.use(cookieParser());
 
 //!routes usage
 app.use('/user', userSystemRouter)
-app.use('/biz', middlwareRouter, bizSystemRouter)
+app.use('/article', middlwareRouter, articleSystemRouter)
 
 module.exports = app;
